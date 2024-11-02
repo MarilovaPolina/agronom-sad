@@ -1,0 +1,311 @@
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif; 
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.container {
+    max-width: 1840px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* HEADER */
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1vw;    
+}
+
+.header-wrapper__left-part {
+    display: flex;
+    align-items: self-end;
+    gap: 1.6vw;
+}
+
+.logo__img {
+    width: 11vw;
+    min-width: 88px;
+}
+
+.search {
+    display: flex;
+    align-items: stretch;
+    gap: 1.6vw;
+}
+
+.search__input {
+    outline: none;
+    padding-left: 0.8vw;
+    width: 23.125vw;
+    min-width: 200px;
+    border-radius: 9px;
+    border: none;
+    font-size: 15px;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.16);
+}
+
+.action-btn {
+    cursor: pointer;
+    padding: 0.6vw 3.6vw;
+    border: none;
+    border-radius: 9px;
+    font-family: "Roboto", sans-serif; 
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+    transition: all 0.2s;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.16);
+}
+
+.add-btn {
+    background-color: #4CAF50;
+}
+
+.add-btn:hover {
+    background-color: #398b3c;
+}
+
+.close-btn {
+    background-color: #737373;
+}
+
+.close-btn:hover {
+    background-color: #626262;
+}
+
+.statistics {
+    text-align: right;
+}
+
+.heading {
+    font-size: 28.13px;
+    font-weight: 700;
+    color: #4E3000;
+}
+
+.statistics__data_present {
+    color: #80BB00;
+}
+
+.statistics__data_absent {
+    color: #EC5937;
+}
+
+.statistics__data {
+    word-spacing: 0.3vw;
+}
+
+/* MAIN */
+
+main {
+    margin-top: 1vw;
+}
+
+.people-list {
+    margin-bottom: 6.5vw;
+}
+
+.people-list__table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+.people-list__table th, 
+.people-list__table td { 
+    border: 1px solid #ddd;
+    vertical-align: top;
+    border: none;
+}
+
+.people-list__table tr:hover {
+    transition: background-color 0.2s;
+}
+
+.people-list__table tbody tr:hover {
+    background-color: #C4C4C4;
+}
+
+.people-list__table th {
+    padding-bottom: 8px;
+    color: #4E3000;
+    font-size: 18.75px;
+    font-weight: 600;
+    border-bottom: 3.75px solid #E9E9E9;
+}
+
+.people-list__table td {
+    cursor: pointer;
+    text-align: left;
+    padding: 0.75vw 10px;
+    font-size: 28.13px;
+    font-weight: 400;
+}
+
+.column-num {
+    text-align: left;
+    width: 11.29%;
+}
+
+.column-name {
+    text-align: left;
+    width: 25.8%;
+}
+
+.column-firm {
+    text-align: left;
+    width: 20.79%;
+}
+
+.column-group {
+    text-align: left;
+    width: 32.13%;
+}
+
+.column-present {
+    width: 28.5%;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 3vw;
+    height: 3vw;
+    margin: 0 auto;
+}
+
+.circle-present {
+    background-color: #80BB00;
+}
+
+.circle-absent {
+    background-color: #EC5937;
+}
+
+/* FILTERS */
+
+.list-filters {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    padding: 30px 0;
+
+    z-index: 1;
+}
+
+.list-filters__wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.list-filters__buttons {
+    margin-left: 3.5vw;
+}
+
+.radio-button {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.radio-button input {
+    display: none;
+}
+
+.radio-button span {
+    padding: 0.4vw 1vw;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 18.75px;
+    font-size: 23.44px;
+    color: #4E3000;
+}
+
+.radio-button input:checked + span {
+    background-color: #C4C4C4; 
+    color: white;
+}
+/* POPUP */
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.popup-content {
+    background-color: white;
+    min-width: 350px;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.popup-content__close {
+    width: 100%;
+    text-align: right;
+}
+
+.close {
+    cursor: pointer;
+    width: 2.8vw;
+    min-width: 16px;
+}
+
+.popup-content__form {
+    width: 100%;
+    padding: 0 20vw;
+    margin: 0 auto;
+}
+
+.form-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2vw;
+    font-size: 25px;
+    color: #4E3000;
+    font-weight: 600;
+}
+
+.form-label__input {
+    margin-left: 50px;
+    width: 30vw;
+    padding: 0.5vw;
+    outline: none;
+    padding-left: 0.8vw;
+    min-width: 200px;
+    border-radius: 9px;
+    border: none;
+    font-size: 15px;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.16);
+}
+
+.form-label__checkbox {
+    display: flex;
+    justify-content: start;
+}
+
+.checkbox {
+    width: 2vw;
+    margin-left: 20px;
+}
+
+.popup-content__buttons .action-btn {
+    margin-right: 2vw;
+    margin-bottom: 2vw;
+}
