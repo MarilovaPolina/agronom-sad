@@ -40,8 +40,8 @@ function App() {
   const [absentPeopleCount, setAbsentPeopleCount] = React.useState(0);
   
   React.useEffect(() => {
-    const presentCount = people.filter(person => person.present==true).length;
-    const absentCount = people.filter(person => person.present==false).length;
+    const presentCount = people.filter(person => person.present===true).length;
+    const absentCount = people.filter(person => person.present===false).length;
 
     setPresentPeopleCount(presentCount);
     setAbsentPeopleCount(absentCount);
@@ -89,11 +89,11 @@ function App() {
           people={filterPeopleByPresence}
           clickPerson={clickOnRow}     
         />  
-        <Filter
+      </main>
+      <Filter
           presenceFilter={presenceFilter} 
           onFilterChange={filterChange}
         />
-      </main>
     </div>
   );
 }

@@ -29,27 +29,17 @@ function Table({ people = [], clickPerson}){
                         })}
                         
                         {/* Для телефонов */}
-                        <tr className="compact-row">
-                            <td>1</td>
-                            <td>Иванов Иван <br /> Компания А <br /> Группа 1</td>
-                            <td>
-                                <div className="circle circle-present"></div>
-                            </td>
-                        </tr>
-                        <tr className="compact-row">
-                            <td>2</td>
-                            <td>Петров Петр <br /> Компания Б <br /> Группа 2</td>
-                            <td>
-                                <div className="circle circle-present"></div>
-                            </td>
-                        </tr>
-                        <tr className="compact-row">
-                            <td>3</td>
-                            <td>Сидоров Сидор <br /> Компания В <br /> Группа 3</td>
-                            <td>
-                                <div className="circle circle-absent"></div>
-                            </td>
-                        </tr>
+                        {people.map((person, index) => {
+                            return(
+                                <tr key={person.id} onClick={() => clickPerson(person)}  className="compact-row">
+                                    <td>{index + 1}</td>
+                                    <td>{person.name}<br />{person.firm}<br />{person.group}</td>
+                                    <td>
+                                        {person.present ? <div className="circle circle-present"></div> : <div className="circle circle-absent"></div>}
+                                    </td>
+                                </tr>
+                            )
+                        })}
                     </tbody>
                 </table>
             </div>
