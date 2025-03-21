@@ -1,0 +1,112 @@
+
+.people_list {
+    margin-bottom: 6.5vw;
+}
+
+.people_list__table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+
+.people_list__table th, 
+.people_list__table td { 
+    border: 1px solid #ddd;
+    vertical-align: top;
+    border: none;
+}
+
+.people_list__table tr:hover {
+    transition: background-color 0.2s;
+}
+
+.people_list__table tbody tr:hover {
+    background-color: #C4C4C4;
+}
+
+.people_list__table th {
+    padding-bottom: 8px;
+    color: #4E3000;
+    font-size: 18.75px;
+    font-weight: 600;
+    border-bottom: 3.75px solid #E9E9E9;
+}
+
+.people_list__table td {
+    cursor: pointer;
+    text-align: left;
+    padding: 0.75vw 10px;
+    font-size: 28.13px;
+    font-weight: 400;
+}
+
+.column_num {
+    text-align: left;
+    width: 11.29%;
+}
+
+.column_name {
+    text-align: left;
+    width: 25.8%;
+}
+
+.column_firm {
+    text-align: left;
+    width: 20.79%;
+}
+
+.column_group {
+    text-align: left;
+    width: 32.13%;
+}
+
+.column_present {
+    width: 28.5%;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 3vw;
+    height: 3vw;
+    margin: 0 auto;
+}
+
+.circle_present {
+    background-color: #80BB00;
+}
+
+.circle_absent {
+    background-color: #EC5937;
+}
+
+@media (max-width: 768px) {
+    .people_list {
+        margin-bottom: calc(100vh - 600px);
+    }
+    .people_list__table thead{
+        display: none;
+    }
+    .people_list__table td {
+        padding: 1vw 0;
+    } 
+    .circle{
+        width: 5vw;
+        height: 5vw;
+        float: right;
+    }
+    .full_row {
+        display: none;
+    }
+    .compact_row {
+        display: table-row;
+    }
+}
+
+@media (min-width: 769px) {
+    .full_row {
+        display: table-row;
+    }
+    .compact_row {
+        display: none;
+    }
+}
