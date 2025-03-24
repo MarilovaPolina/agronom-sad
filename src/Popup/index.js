@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './Popup.module.css';
 
-function Popup(props) {
+function Popup({ popupData, onInfoChange, onClose, showDeleteBtn, onDelete }) {
   // Подгрузка данных в поля формы
   const [formData, setFormData] = React.useState({
-    name: props.popupData?.name || '',
-    firm: props.popupData?.firm || '',
-    group: props.popupData?.group || 'Прохожий',
-    present: props.popupData?.present || false,
+    name: popupData?.name || '',
+    firm: popupData?.firm || '',
+    group: popupData?.group || 'Прохожий',
+    present: popupData?.present || false,
   });
 
   // Обработка изменений
@@ -28,8 +28,8 @@ function Popup(props) {
       alert('Заполните все поля!');
       return;
     }
-    props.onInfoChange(formData);
-    props.onClose();
+    onInfoChange(formData);
+    onClose();
   }
 
   return (
@@ -38,7 +38,7 @@ function Popup(props) {
         <div className={styles.popup_content}>
           <div className={styles.popup_content__close}>
             <img
-              onClick={props.onClose}
+              onClick={onClose}
               src="./img/close.png"
               alt="Close"
               className={styles.close}
@@ -96,9 +96,9 @@ function Popup(props) {
                 value="Добавить"
                 className={`${styles.action_btn} ${styles.add_btn}`}
               />
-              {props.showDeleteBtn ? (
+              {showDeleteBtn ? (
                 <button
-                  onClick={() => props.onDelete(props.popupData.id)}
+                  onClick={() => onDelete(popupData.id)}
                   type="button"
                   className={`${styles.action_btn} ${styles.delete_btn}`}
                 >
@@ -106,7 +106,7 @@ function Popup(props) {
                 </button>
               ) : null}
               <button
-                onClick={props.onClose}
+                onClick={onClose}
                 type="button"
                 className={`${styles.action_btn} ${styles.close_btn}`}
               >

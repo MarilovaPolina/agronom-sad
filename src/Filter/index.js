@@ -1,9 +1,9 @@
 import styles from './Filter.module.css';
 
-function Filter(props) {
+function Filter({ onFilterChange, presenceFilter }) {
   // Переключение радио-кнопки
   const handleChange = (event) => {
-    props.onFilterChange(event.target.value);
+    onFilterChange(event.target.value);
   };
 
   return (
@@ -17,7 +17,7 @@ function Filter(props) {
                 type="radio"
                 name="filter"
                 value="absent"
-                checked={props.presenceFilter === 'absent'}
+                checked={presenceFilter === 'absent'}
                 onChange={handleChange}
               />
               <span>Отсутствующим</span>
@@ -27,7 +27,7 @@ function Filter(props) {
                 type="radio"
                 name="filter"
                 value="present"
-                checked={props.presenceFilter === 'present'}
+                checked={presenceFilter === 'present'}
                 onChange={handleChange}
               />
               <span>Присутствующим</span>
@@ -37,7 +37,7 @@ function Filter(props) {
                 type="radio"
                 name="filter"
                 value="all"
-                checked={props.presenceFilter === 'all'}
+                checked={presenceFilter === 'all'}
                 onChange={handleChange}
               />
               <span>Без фильтра</span>
